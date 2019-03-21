@@ -818,6 +818,54 @@ cp -f /etc/rtinst/conf/acc.ini /var/www/rutorrent/conf/access.ini
 
 
 ###############################
+### Install Quota	   	    ###
+###############################
+echo "Installing Quota for limit the user storage"
+apt install quota
+
+
+###############################
+### Install VNSTAT and WEB	###
+###############################
+echo "Installing VNSTAT for monitoring bandwidth usage"
+#Install Vnstat	
+apt install vnstat
+
+#Install Vnstat Web
+cd /tmp
+wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
+tar xvf vnstat_php_frontend-1.5.1.tar.gz
+cp -fr vnstat_php_frontend-1.5.1/ /var/www/vnstat
+
+
+##################################
+### Install Quotaspace Plugins ###
+##################################
+
+# Installing and configuring quotaspace plugin
+cd /var/www/rutorrent/plugins/
+wget -q blazeshosting.com/scripts/quotaspace.zip
+unzip quotaspace.zip
+rm -rf quotaspace.zip
+
+# Permissions for quotaspace
+chown -R www-data:www-data /var/www/plugins/quotaspace
+
+######################################################
+### Install Plimit Plugins for stop public torrent ###
+######################################################
+
+
+# Installing and configuring plimits plugin
+cd /var/www/rutorrent/plugins/
+wget -q blazeshosting.com/scripts/plimits.zip
+unzip plimits.zip
+rm -rf plimits.zip
+
+# Permissions for plimits
+chown -R www-data:www-data var/www/rutorrent/plugins/plimits
+
+###############################
 ### INSTALL AUTODL-IRSSI ###
 ###############################
 
