@@ -576,8 +576,7 @@ oldsshport=$(grep -P '^[#\s]*Port ' /etc/ssh/sshd_config | sed 's/[^0-9]*//g')
 if [ "$portdefault" = "0" ]; then
   sshport=22
 elif [ "$oldsshport" = "22" ] && [ "$portdefault" = "1" ]; then
-  sshport=$(2017)
-  #sshport=$(random 21000 29000)
+  sshport=$(random 2017 2017)
 else
   sshport=$oldsshport
 fi
@@ -622,8 +621,7 @@ rtsslcert -d
 ### INSTALL FTP ###
 ###############################
 
-ftpport=$(2018)
-#ftpport=$(random 41005 48995)
+ftpport=$(random 2018 2018)
 
 if [ $(dpkg-query -W -f='${Status}' "vsftpd" 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   echo "Installing vsftpd" | tee -a $logfile
