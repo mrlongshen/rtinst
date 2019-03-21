@@ -841,6 +841,7 @@ cp -fr vnstat_php_frontend-1.5.1/ /var/www/vnstat
 ##################################
 ### Install Quotaspace Plugins ###
 ##################################
+echo "Installing Quotaspace Plugins"
 
 # Installing and configuring quotaspace plugin
 cd /var/www/rutorrent/plugins/
@@ -854,7 +855,7 @@ chown -R www-data:www-data /var/www/plugins/quotaspace
 ######################################################
 ### Install Plimit Plugins for stop public torrent ###
 ######################################################
-
+echo "Installing Plimit Plugins"
 
 # Installing and configuring plimits plugin
 cd /var/www/rutorrent/plugins/
