@@ -850,7 +850,7 @@ unzip quotaspace.zip
 rm -rf quotaspace.zip
 
 # Permissions for quotaspace
-chown -R www-data:www-data /var/www/plugins/quotaspace
+chown -R www-data:www-data /var/www/rutorrent/plugins/quotaspace
 
 ######################################################
 ### Install Plimit Plugins for stop public torrent ###
@@ -864,23 +864,23 @@ unzip plimits.zip
 rm -rf plimits.zip
 
 # Permissions for plimits
-chown -R www-data:www-data var/www/rutorrent/plugins/plimits
+chown -R www-data:www-data /var/www/rutorrent/plugins/plimits
 
 ###############################
 ### INSTALL LAZY SCRIPTS    ###
 ###############################
 
 echo "Installing Lazy Script" | tee -a $logfile
-cd /
+cd 
 wget -q blazeshosting.com/scripts/lazyscript.sh
 chmod +x lazyscript.sh
 
 ###############################
-### INSTALL LAZY SCRIPTS    ###
+### Deleting diskspace plugins    ###
 ###############################
 
 echo "Deleting diskspace plugins" | tee -a $logfile
-cd /var/www/plugins/
+cd /var/www/rutorrent/plugins/
 rm -rf diskspace
 
 
