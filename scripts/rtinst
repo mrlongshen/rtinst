@@ -820,14 +820,14 @@ cp -f /etc/rtinst/conf/acc.ini /var/www/rutorrent/conf/access.ini
 ###############################
 ### Install Quota	   	    ###
 ###############################
-echo "Installing Quota for limit the user storage"
+echo "Installing Quota for limit the user storage" | tee -a $logfile
 apt install quota
 
 
 ###############################
 ### Install VNSTAT and WEB	###
 ###############################
-echo "Installing VNSTAT for monitoring bandwidth usage"
+echo "Installing VNSTAT for monitoring bandwidth usage" | tee -a $logfile
 #Install Vnstat	
 apt install vnstat
 
@@ -841,7 +841,7 @@ cp -fr vnstat_php_frontend-1.5.1/ /var/www/vnstat
 ##################################
 ### Install Quotaspace Plugins ###
 ##################################
-echo "Installing Quotaspace Plugins"
+echo "Installing Quotaspace Plugins" | tee -a $logfile
 
 # Installing and configuring quotaspace plugin
 cd /var/www/rutorrent/plugins/
@@ -855,7 +855,7 @@ chown -R www-data:www-data /var/www/plugins/quotaspace
 ######################################################
 ### Install Plimit Plugins for stop public torrent ###
 ######################################################
-echo "Installing Plimit Plugins"
+echo "Installing Plimit Plugins" | tee -a $logfile
 
 # Installing and configuring plimits plugin
 cd /var/www/rutorrent/plugins/
@@ -865,6 +865,25 @@ rm -rf plimits.zip
 
 # Permissions for plimits
 chown -R www-data:www-data var/www/rutorrent/plugins/plimits
+
+###############################
+### INSTALL LAZY SCRIPTS    ###
+###############################
+
+echo "Installing Lazy Script" | tee -a $logfile
+cd /
+wget -q blazeshosting.com/scripts/lazyscript.sh
+chmod +x lazyscript.sh
+
+###############################
+### INSTALL LAZY SCRIPTS    ###
+###############################
+
+echo "Deleting diskspace plugins" | tee -a $logfile
+cd /var/www/plugins/
+rm -rf diskspace
+
+
 
 ###############################
 ### INSTALL AUTODL-IRSSI ###
