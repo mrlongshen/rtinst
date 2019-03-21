@@ -15,7 +15,7 @@
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin
 
 # if left blank will install latest version of rtorrent, or set to a specific release E.G. '0.9.6' to install that release
-rtorrentrel=''
+rtorrentrel='0.9.6'
 
 #url's of the major components
 rt_url="http://rtorrent.net/downloads/"
@@ -576,7 +576,8 @@ oldsshport=$(grep -P '^[#\s]*Port ' /etc/ssh/sshd_config | sed 's/[^0-9]*//g')
 if [ "$portdefault" = "0" ]; then
   sshport=22
 elif [ "$oldsshport" = "22" ] && [ "$portdefault" = "1" ]; then
-  sshport=$(random 21000 29000)
+  sshport=$(2017)
+  #sshport=$(random 21000 29000)
 else
   sshport=$oldsshport
 fi
@@ -621,7 +622,8 @@ rtsslcert -d
 ### INSTALL FTP ###
 ###############################
 
-ftpport=$(random 41005 48995)
+ftpport=$(2018)
+#ftpport=$(random 41005 48995)
 
 if [ $(dpkg-query -W -f='${Status}' "vsftpd" 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   echo "Installing vsftpd" | tee -a $logfile
@@ -809,6 +811,13 @@ if [ $osname = "Raspbian" ]; then
   echo '[unpack]' >> /var/www/rutorrent/conf/plugins.ini
   echo 'enabled = no' >> /var/www/rutorrent/conf/plugins.ini
 fi
+
+###############################
+### CUSTOM ACC.INI	   	    ###
+###############################
+
+cp -f /etc/rtinst/conf/acc.ini /var/www/rutorrent/conf/access.ini
+
 
 ###############################
 ### INSTALL AUTODL-IRSSI ###
