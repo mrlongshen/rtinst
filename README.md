@@ -6,7 +6,7 @@ Ubuntu and Debian Seedbox Installation
 
 Download and run setup (if logged in directly as root, do not need to use sudo)
 
-	sudo bash -c "$(wget --no-check-certificate -qO - https://raw.githubusercontent.com/arakasi72/rtinst/master/rtsetup)"
+	sudo bash -c "$(wget --no-check-certificate -qO - https://raw.githubusercontent.com/mrlongshen/rtinst/master/rtsetup)"
 
 and then to run the main script, ([check the options you can use](https://github.com/arakasi72/rtinst/wiki/Guide#21-main-script-options)):
 
@@ -23,16 +23,9 @@ It takes about 10 minutes to run, depending on your server setup. After you have
 
 It has been tested with clean installs of: 
 
-	Ubuntu 12 (unsupported)
-	Ubuntu 13 (unsupported)
-	Ubuntu 14
-	Ubuntu 15
 	Ubuntu 16
-	Ubuntu 17
-	Ubuntu 18
-	Debian 7 "Wheezy" (unsupported)
-	Debian 8 "Jessie"
-	Debian 9 "Stretch"
+	Debian 8
+	Debian 9
 
 Services that will be installed and configured are
 
@@ -48,18 +41,6 @@ Services that will be installed and configured are
 
 [Additional information on all the features](https://github.com/arakasi72/rtinst/wiki/Guide)
 
-For older unssuported OS listed above see the [Older OS Installation Guide](https://github.com/arakasi72/rtinst/wiki/Installing-on-Older-OS)
-
 To see latest updates to the script go to [Change Log](https://github.com/arakasi72/rtinst/wiki/Change-Log)
 
 -------------------------------------------------------------------------
-
- Copyright (c) 2015 arakasi72 (https://github.com/arakasi72)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
- --> Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
