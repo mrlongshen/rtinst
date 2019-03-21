@@ -10,12 +10,17 @@ Run
 
 After you have run the script and everything is working, Please reboot your server.
 	
-subversion: apt-get install subversion
+
+#subversion: 
+
+	apt-get install subversion
 
 Installation
+
 quotaspace
 
 $ cd /var/www/rutorrent/plugins/plugins
+
 $ svn co https://github.com/mrlongshen/rtinst/plugins/trunk/quotaspace
 
 This is my repo clone from rtinst. This script has been edit for personal use. 
