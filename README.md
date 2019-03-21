@@ -11,7 +11,7 @@ Run
 After you have run the script and everything is working, Please reboot your server.
 	
 
-#subversion: 
+# SUBVERSION: 
 
 	apt-get install subversion
 
