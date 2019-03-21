@@ -22,11 +22,11 @@ Services that will be installed and configured are
 
 Download and run setup (if logged in directly as root, do not need to use sudo)
 
-	sudo bash -c "$(wget --no-check-certificate -qO - https://raw.githubusercontent.com/mrlongshen/rtinst/master/rtsetup)"
+	bash -c "$(wget --no-check-certificate -qO - https://raw.githubusercontent.com/mrlongshen/rtinst/master/rtsetup)"
 
 and then to run the main script,
 
-	sudo rtinst
+	rtinst
 
 After you have run the script and everything is working, Please reboot your server.
 
