@@ -19,7 +19,7 @@ Installation
 
 quotaspace
 
-$ cd /var/www/rutorrent/plugins/plugins
+$ cd /var/www/rutorrent/plugins/
 
 $ svn co https://github.com/mrlongshen/rtinst/plugins/trunk/quotaspace
 
