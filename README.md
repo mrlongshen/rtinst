@@ -1,15 +1,7 @@
-## rtinst
-
-#### 30 Second Guide
+## INSTALLATION
 
 Ubuntu and Debian Seedbox Installation
 
-It has been tested with clean installs of: 
-
-	Ubuntu 16
-	Debian 8
-	Debian 9
-	
 Services that will be installed and configured are
 
 	1. vsftpd port 2018
@@ -20,12 +12,9 @@ Services that will be installed and configured are
 	6. webmin
 	7. ssh port 2017
 
-Download and run setup (if logged in directly as root, do not need to use sudo)
-
 	bash -c "$(wget --no-check-certificate -qO - https://raw.githubusercontent.com/mrlongshen/rtinst/master/rtsetup)"
 
-and then to run the main script,
-
+Run
 	rtinst
 
 After you have run the script and everything is working, Please reboot your server.
