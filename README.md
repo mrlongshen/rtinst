@@ -48,6 +48,14 @@ Services that will be installed and configured are
 	4. Install vnstat
 	5.
 	6. 
+	
+subversion: apt-get install subversion
+
+Installation
+quotaspace
+
+$ cd /var/www/rutorrent/plugins/plugins
+$ svn co https://github.com/mrlongshen/plugins/trunk/quotaspace
 
 This is my repo clone from rtinst. This script has been edit for personal use. 
 Please dont use it if you not understand.
