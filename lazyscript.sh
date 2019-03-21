@@ -173,7 +173,7 @@ case $SIZE in
 esac
 }
 
-function _installfilemanager() {
+function _quotaspace() {
 clear
 
 # Checking if user is root
@@ -190,12 +190,12 @@ read -p "Please type your ruTorrent Plugins path folder: " -e -i /var/www/rutorr
 
 # Installing and configuring filemanager plugin
 cd $rutorrent_plugin_path/plugins/
-svn co https://github.com/nelu/rutorrent-thirdparty-plugins/trunk/filemanager
+svn co https://github.com/nelu/rutorrent-thirdparty-plugins/tree/stable/filemanager
 
 
 # Permissions for filemanager
-chown -R www-data:www-data $rutorrent_path/plugins/filemanager
-chmod -R 775 $rutorrent_path/plugins/filemanager/scripts
+chown -R www-data:www-data $rutorrent_plugin_path/plugins/filemanager
+chmod -R 775 $rutorrent_plugin_path/plugins/filemanager/scripts
 
 # End of the script
 clear
