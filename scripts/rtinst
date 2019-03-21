@@ -869,7 +869,7 @@ fi
 ### Install Quota	   	    ###
 ###############################
 echo "Installing Quota for limit the user storage" | tee -a $logfile
-apt install quota
+apt -y install quota
 
 
 ###############################
@@ -877,7 +877,7 @@ apt install quota
 ###############################
 echo "Installing VNSTAT for monitoring bandwidth usage" | tee -a $logfile
 #Install Vnstat	
-apt install vnstat
+apt -y install vnstat
 
 #Install Vnstat Web
 cd /tmp
