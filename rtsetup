@@ -5,8 +5,11 @@
 #  Copyright (c) 2015 arakasi72 (https://github.com/arakasi72)
 #
 #  --> Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+#	
 #
 ######################################################################
+
+# Modified by mrlongshen
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin
 
@@ -82,7 +85,7 @@ if [ -d /etc/rtinst ] && [ -z $branch ]; then
 fi
 
 if [ -z $branch ] || [ $branch = release ]; then
-  branch=$(basename "$(git ls-remote --tags https://github.com/mrlongshen/rtinst.git | grep -o 'refs/tags/v.*' | sort -V | tail -1)")
+  #branch=$(basename "$(git ls-remote --tags https://github.com/mrlongshen/rtinst.git | grep -o 'refs/tags/v.*' | sort -V | tail -1)")
   if [ -z $branch ]; then
     echo "Could not find a numbered release, using master instead"
     branch=master
