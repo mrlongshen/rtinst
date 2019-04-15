@@ -883,10 +883,15 @@ echo "Installing VNSTAT for monitoring bandwidth usage" | tee -a $logfile
 apt -y install vnstat
 
 #Install Vnstat Web
-cd /tmp
-wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
-tar xvf vnstat_php_frontend-1.5.1.tar.gz
-cp -fr vnstat_php_frontend-1.5.1/ /var/www/vnstat
+cd /var/www
+
+if [ -d "/var/www/vnstat" ]; then
+  rm -r /var/www/vnstat
+fi
+
+wget -q http://blazeshosting.com/scripts/vnstat.zip
+unzip vnstat.zip
+rm -rf vnstat.zip
 
 
 ##################################
