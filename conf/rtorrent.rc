@@ -21,8 +21,8 @@ throttle.global_down.max_rate.set = 0
 throttle.global_up.max_rate.set = 0
 
 # Maximum number of simultaneous downloads and uploads slots
-throttle.max_downloads.global.set = 10
-throttle.max_uploads.global.set = 10
+throttle.max_downloads.global.set = 5
+throttle.max_uploads.global.set = 5
 
 # Maximum and minimum number of peers to connect to per torrent while downloading
 throttle.min_peers.normal.set = 30
