@@ -26,7 +26,7 @@ throttle.max_uploads.global.set = 5
 
 # Maximum and minimum number of peers to connect to per torrent while downloading
 throttle.min_peers.normal.set = 30
-throttle.max_peers.normal.set = 150
+throttle.max_peers.normal.set = 100
 
 # Same as above but for seeding completed torrents (seeds per torrent)
 throttle.min_peers.seed.set = -1

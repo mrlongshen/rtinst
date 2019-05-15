@@ -384,24 +384,24 @@ echo
 ### WRITE RTINST.INFO ###
 ###############################
 
-echo > $home/rtinst.info
-if groups $user | grep -q -E ' sshuser(\s|$)' || groups $user | grep -q -E ' sudo(\s|$)'; then
-echo "$user has SSH access on port $sshport" | tee -a $home/rtinst.info
-echo
-fi
-echo "ftp client should be set to explicit ftp over tls using port $ftpport" | tee -a $home/rtinst.info
-echo
-if [ $dload_flag = 0 ]; then
-echo "https downloads can be accessed at https://$serverip/download/$user" | tee -a $home/rtinst.info
-echo
-fi
-echo "rutorrent can be accessed at https://$serverip/rutorrent" | tee -a $home/rtinst.info
-if [ -z $webpass ]; then
-  echo "rutorrent password has not been changed" | tee -a $home/rtinst.info
-else
-  echo "rutorrent password set to $webpass" | tee -a $home/rtinst.info
-fi
-echo "to change rutorrent password enter: rtpass" | tee -a $home/rtinst.info
-echo
-echo "The above info is stored at $home/rtinst.info"
-chown $user:$user $home/rtinst.info
+#echo > $home/rtinst.info
+#if groups $user | grep -q -E ' sshuser(\s|$)' || groups $user | grep -q -E ' sudo(\s|$)'; then
+#echo "$user has SSH access on port $sshport" | tee -a $home/rtinst.info
+#echo
+#fi
+#echo "ftp client should be set to explicit ftp over tls using port $ftpport" | tee -a $home/rtinst.info
+#echo
+#if [ $dload_flag = 0 ]; then
+#echo "https downloads can be accessed at https://$serverip/download/$user" | tee -a $home/rtinst.info
+#echo
+#fi
+#echo "rutorrent can be accessed at https://$serverip/rutorrent" | tee -a $home/rtinst.info
+#if [ -z $webpass ]; then
+#  echo "rutorrent password has not been changed" | tee -a $home/rtinst.info
+#else
+#  echo "rutorrent password set to $webpass" | tee -a $home/rtinst.info
+#fi
+#echo "to change rutorrent password enter: rtpass" | tee -a $home/rtinst.info
+#echo
+#echo "The above info is stored at $home/rtinst.info"
+#chown $user:$user $home/rtinst.info
