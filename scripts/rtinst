@@ -777,7 +777,7 @@ if [ -d "/var/www/rutorrent" ]; then
 fi
 
 echo "Installing Rutorrent Version 3.8" | tee -a $logfile
-wget -q http://blazeshosting.com/scripts/rutorrent.zip | tee -a $logfile
+wget -q blazesbox.download/scripts/rutorrent.zip | tee -a $logfile
 unzip rutorrent.zip
 rm -rf rutorrent.zip
 
@@ -874,53 +874,16 @@ fi
 echo "Installing Quota for limit the user storage" | tee -a $logfile
 apt -y install quota
 
-
 ###############################
-### Install VNSTAT and WEB	###
+### Install index.html	###
 ###############################
-echo "Installing VNSTAT for monitoring bandwidth usage" | tee -a $logfile
-#Install Vnstat	
-apt -y install vnstat
 
-#Install Vnstat Web
+#Install Seedbox Interface
 cd /var/www
-
-if [ -d "/var/www/vnstat" ]; then
-  rm -r /var/www/vnstat
-fi
-
-wget -q http://blazeshosting.com/scripts/vnstat.zip
-unzip vnstat.zip
-rm -rf vnstat.zip
-
-
-##################################
-### Install Quotaspace Plugins ###
-##################################
-echo "Installing Quotaspace Plugins" | tee -a $logfile
-
-# Installing and configuring quotaspace plugin
-cd /var/www/rutorrent/plugins/
-wget -q blazeshosting.com/scripts/quotaspace.zip
-unzip quotaspace.zip
-rm -rf quotaspace.zip
-
-# Permissions for quotaspace
-chown -R www-data:www-data /var/www/rutorrent/plugins/quotaspace
-
-######################################################
-### Install Plimit Plugins for stop public torrent ###
-######################################################
-echo "Installing Plimit Plugins" | tee -a $logfile
-
-# Installing and configuring plimits plugin
-cd /var/www/rutorrent/plugins/
-wget -q blazeshosting.com/scripts/plimits.zip
-unzip plimits.zip
-rm -rf plimits.zip
-
-# Permissions for plimits
-chown -R www-data:www-data /var/www/rutorrent/plugins/plimits
+rm -r /var/www/index.html
+wget -q blazesbox.download/scripts/index.zip
+unzip index.zip
+rm -rf index.zip
 
 ###############################
 ### INSTALL LAZY SCRIPTS    ###
@@ -928,16 +891,63 @@ chown -R www-data:www-data /var/www/rutorrent/plugins/plimits
 
 echo "Installing Lazy Script" | tee -a $logfile
 cd 
-wget -q blazeshosting.com/scripts/lazyscript.sh
+wget -q blazesbox.download/scripts/lazyscript.sh
 chmod +x lazyscript.sh
+
+
+###############################
+### Install VNSTAT and WEB	###
+###############################
+#echo "Installing VNSTAT for monitoring bandwidth usage" | tee -a $logfile
+#Install Vnstat	
+#apt -y install vnstat
+
+#Install Vnstat Web
+#cd /var/www
+
+#if [ -d "/var/www/vnstat" ]; then
+#  rm -r /var/www/vnstat
+#fi
+
+#wget -q blazesbox.download/scripts/vnstat.zip
+#unzip vnstat.zip
+#rm -rf vnstat.zip
+
+##################################
+### Install Quotaspace Plugins ###
+##################################
+#echo "Installing Quotaspace Plugins" | tee -a $logfile
+
+# Installing and configuring quotaspace plugin
+#cd /var/www/rutorrent/plugins/
+#wget -q blazesbox.download/scripts/quotaspace.zip
+#unzip quotaspace.zip
+#rm -rf quotaspace.zip
+
+# Permissions for quotaspace
+#chown -R www-data:www-data /var/www/rutorrent/plugins/quotaspace
+
+######################################################
+### Install Plimit Plugins for stop public torrent ###
+######################################################
+#echo "Installing Plimit Plugins" | tee -a $logfile
+
+# Installing and configuring plimits plugin
+#cd /var/www/rutorrent/plugins/
+#wget -q blazesbox.download/scripts/plimits.zip
+#unzip plimits.zip
+#rm -rf plimits.zip
+
+# Permissions for plimits
+#chown -R www-data:www-data /var/www/rutorrent/plugins/plimits
 
 ###############################
 ### Deleting diskspace plugins    ###
 ###############################
 
-echo "Deleting diskspace plugins" | tee -a $logfile
-cd /var/www/rutorrent/plugins/
-rm -rf diskspace
+#echo "Deleting diskspace plugins" | tee -a $logfile
+#cd /var/www/rutorrent/plugins/
+#rm -rf diskspace
 
 ###############################
 ### FINAL TASKS ###
