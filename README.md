@@ -1,6 +1,6 @@
 ## INSTALLATION
 
-Ubuntu 14,16,18 and Debian 8,9 Seedbox Installation
+Ubuntu 16,18 and Debian 8,9 Seedbox Installation
 
 	bash -c "$(wget --no-check-certificate -qO - https://raw.githubusercontent.com/mrlongshen/rtinst/master/rtsetup)"
 
